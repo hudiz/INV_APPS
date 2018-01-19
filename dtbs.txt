@@ -1,0 +1,380 @@
+
+
+
+
+CREATE TABLE [dbo].[acc_dtls] (
+    [acc_id]   BIGINT        IDENTITY (1, 1) NOT NULL,
+    [acc_name] VARCHAR (50)  NOT NULL,
+    [acc_desc] VARCHAR (100) NULL,
+    [acc_sts]  CHAR (1)      NULL,
+    [createby] VARCHAR (10)  NULL,
+    [createon] DATETIME      NULL,
+    [updateby] VARCHAR (10)  NULL,
+    [updateon] DATETIME      NULL,
+    [comp_id]  VARCHAR (4)   NOT NULL
+);
+
+
+
+
+
+
+CREATE TABLE [dbo].[comp_dtls] (
+    [comp_id]    VARCHAR (4)   NOT NULL,
+    [comp_name]  VARCHAR (100) NOT NULL,
+    [comp_addr]  VARCHAR (150) NULL,
+    [comp_ph]    VARCHAR (12)  NULL,
+    [comp_email] VARCHAR (50)  NULL,
+    [comp_cont]  VARCHAR (50)  NULL,
+    [createby]   VARCHAR (10)  NULL,
+    [createon]   DATETIME      NULL,
+    [updateby]   VARCHAR (10)  NULL,
+    [updateon]   DATETIME      NULL,
+    CONSTRAINT [PK_comp_dtls] PRIMARY KEY CLUSTERED ([comp_id] ASC)
+);
+
+
+
+
+
+CREATE TABLE [dbo].[cust_supp_dtls] (
+    [cust_sup_auto_id] BIGINT        IDENTITY (1, 1) NOT NULL,
+    [cust_sup_id]      VARCHAR (10)  NOT NULL,
+    [cust_sup_name]    VARCHAR (100) NOT NULL,
+    [cust_sup_addr]    VARCHAR (150) NULL,
+    [cust_sup_ph]      VARCHAR (12)  NULL,
+    [cust_sup_ph1]     VARCHAR (12)  NULL,
+    [cust_sup_email]   VARCHAR (50)  NULL,
+    [createby]         VARCHAR (10)  NULL,
+    [createon]         DATETIME      NULL,
+    [updateby]         VARCHAR (10)  NULL,
+    [updateon]         DATETIME      NULL,
+    [comp_id]          VARCHAR (4)   NOT NULL,
+    [cust_sup_sts]     VARCHAR (4)   NOT NULL
+);
+
+
+
+
+
+CREATE TABLE [dbo].[expns_dtls] (
+    [expns_id]   BIGINT       IDENTITY (1, 1) NOT NULL,
+    [expns_type] VARCHAR (20) NOT NULL,
+    [expns_name] VARCHAR (50) NOT NULL,
+    [expns_code] VARCHAR (10) NOT NULL,
+    [expns_sts]  CHAR (1)     NULL,
+    [createby]   VARCHAR (10) NULL,
+    [createon]   DATETIME     NULL,
+    [updateby]   VARCHAR (10) NULL,
+    [updateon]   DATETIME     NULL,
+    [comp_id]    VARCHAR (4)  NOT NULL
+);
+
+
+
+
+
+
+CREATE TABLE [dbo].[item_dtls] (
+    [itm_pr_gid]    BIGINT          IDENTITY (1, 1) NOT NULL,
+    [itm_pr_id]     VARCHAR (10)    NULL,
+    [itm_pr_info]   VARCHAR (100)   NULL,
+    [itm_pr_grp]    VARCHAR (10)    NULL,
+    [itm_pr_exp]    DATETIME        NULL,
+    [itm_pr_dos]    DATETIME        NULL,
+    [itm_pr_price]  DECIMAL (18, 3) NULL,
+    [itm_pr_cost]   DECIMAL (18, 3) NULL,
+    [itm_pr_unt]    VARCHAR (10)    NULL,
+    [itm_pr_refid]  VARCHAR (15)    NULL,
+    [itm_pr_taxpct] DECIMAL (18, 3) NULL,
+    [itm_pr_taxamt] DECIMAL (18, 3) NULL,
+    [itm_pr_rmk]    VARCHAR (100)   NULL,
+    [itm_pr_sts]    VARCHAR (1)     NULL,
+    [createby]      VARCHAR (10)    NULL,
+    [createon]      DATETIME        NULL,
+    [updateby]      VARCHAR (10)    NULL,
+    [updateon]      DATETIME        NULL,
+    [comp_id]       VARCHAR (4)     NULL
+);
+
+
+
+
+
+
+
+
+CREATE TABLE [dbo].[itm_grp_dtls] (
+    [itm_grp_id]   BIGINT       IDENTITY (1, 1) NOT NULL,
+    [itm_grp_code] VARCHAR (10) NOT NULL,
+    [itm_grp_desc] VARCHAR (50) NOT NULL,
+    [createby]     VARCHAR (10) NULL,
+    [createon]     DATETIME     NULL,
+    [updateby]     VARCHAR (10) NULL,
+    [updateon]     DATETIME     NULL,
+    [comp_id]      VARCHAR (4)  NOT NULL
+);
+
+
+
+
+
+
+
+
+CREATE TABLE [dbo].[itm_price_dtls] (
+    [itm_pr_gid]    BIGINT          IDENTITY (1, 1) NOT NULL,
+    [itm_pr_id]     VARCHAR (10)    NULL,
+    [itm_pr_info]   VARCHAR (100)   NULL,
+    [itm_pr_grp]    VARCHAR (10)    NULL,
+    [itm_pr_exp]    DATETIME        NULL,
+    [itm_pr_dos]    DATETIME        NULL,
+    [itm_pr_price]  DECIMAL (18, 3) NULL,
+    [itm_pr_cost]   DECIMAL (18, 3) NULL,
+    [itm_pr_unt]    VARCHAR (10)    NULL,
+    [itm_pr_refid]  VARCHAR (15)    NULL,
+    [itm_pr_taxpct] DECIMAL (18, 3) NULL,
+    [itm_pr_taxamt] DECIMAL (18, 3) NULL,
+    [itm_pr_rmk]    VARCHAR (100)   NULL,
+    [itm_pr_sts]    VARCHAR (1)     NULL,
+    [createby]      VARCHAR (10)    NULL,
+    [createon]      DATETIME        NULL,
+    [updateby]      VARCHAR (10)    NULL,
+    [updateon]      DATETIME        NULL,
+    [comp_id]       VARCHAR (4)     NULL
+);
+
+
+
+
+
+
+
+
+CREATE TABLE [dbo].[login_dtls] (
+    [login_id]        BIGINT        IDENTITY (1, 1) NOT NULL,
+    [login_name]      VARCHAR (10)  NOT NULL,
+    [login_pwd]       VARCHAR (30)  NOT NULL,
+    [login_email]     VARCHAR (50)  NOT NULL,
+    [login_ph]        VARCHAR (12)  NOT NULL,
+    [login_expry]     DATETIME      NOT NULL,
+    [login_user_name] VARCHAR (100) NOT NULL,
+    [createby]        VARCHAR (10)  NULL,
+    [createon]        DATETIME      NULL,
+    [updateby]        VARCHAR (10)  NULL,
+    [updateon]        DATETIME      NULL,
+    [comp_id]         VARCHAR (4)   NOT NULL
+);
+
+
+
+
+
+
+
+CREATE TABLE [dbo].[pr_dtls] (
+    [pr_guid]      BIGINT          IDENTITY (1, 1) NOT NULL,
+    [pr_inv_id]    VARCHAR (15)    NOT NULL,
+    [pr_cust_id]   VARCHAR (10)    NULL,
+    [pr_cust_name] VARCHAR (100)   NULL,
+    [pr_tot_itm]   INT             NULL,
+    [pr_tot_amt]   DECIMAL (18, 3) NULL,
+    [pr_disc]      DECIMAL (18, 3) NULL,
+    [pr_date_time] DATETIME        NULL,
+    [pr_net_amt]   DECIMAL (18, 3) NULL,
+    [pr_paid_by1]  VARCHAR (50)    NULL,
+    [pr_rmk1]      VARCHAR (100)   NULL,
+    [pr_amt1]      DECIMAL (18, 3) NULL,
+    [pr_paid_by2]  VARCHAR (50)    NULL,
+    [pr_rmk2]      VARCHAR (100)   NULL,
+    [pr_amt2]      DECIMAL (18, 3) NULL,
+    [pr_remark]    VARCHAR (100)   NULL,
+    [pr_sts]       VARCHAR (1)     NULL,
+    [pr_crd_flg]   VARCHAR (1)     NULL,
+    [pr_flg]       VARCHAR (2)     NULL,
+    [pr_cr_amt]    DECIMAL (18, 3) NULL,
+    [createby]     VARCHAR (10)    NULL,
+    [createon]     DATETIME        NULL,
+    [updateby]     VARCHAR (10)    NULL,
+    [updateon]     DATETIME        NULL,
+    [comp_id]      VARCHAR (4)     NULL,
+    [pr_ret_id]    VARCHAR (10)    NULL,
+    [pr_tax_amt]   DECIMAL (18, 3) NULL,
+    [pr_oth_amt]   DECIMAL (18, 3) NULL
+);
+
+
+
+
+
+
+CREATE TABLE [dbo].[pr_item_dtls] (
+    [pr_itm_guid]   BIGINT          IDENTITY (1, 1) NOT NULL,
+    [pr_itm_inv]    VARCHAR (10)    NOT NULL,
+    [pr_itm_flg]    VARCHAR (2)     NULL,
+    [pr_itm_id]     VARCHAR (10)    NULL,
+    [pr_itm_grp]    VARCHAR (10)    NULL,
+    [pr_itm_name]   VARCHAR (50)    NULL,
+    [pr_itm_price]  DECIMAL (18, 3) NULL,
+    [pr_itm_cost]   DECIMAL (18, 3) NULL,
+    [pr_itm_disc]   DECIMAL (18, 3) NULL,
+    [pr_itm_taxamt] DECIMAL (18, 3) NULL,
+    [pr_itm_amt]    DECIMAL (18, 3) NULL,
+    [pr_itm_qty]    DECIMAL (18, 3) NULL,
+    [pr_itm_custid] VARCHAR (10)    NULL,
+    [pr_itm_date]   DATETIME        NULL,
+    [createby]      VARCHAR (10)    NULL,
+    [createon]      DATETIME        NULL,
+    [updateby]      VARCHAR (10)    NULL,
+    [updateon]      DATETIME        NULL,
+    [comp_id]       VARCHAR (4)     NULL,
+    [pr_itm_taxpct] DECIMAL (18, 2) NULL
+);
+
+
+
+
+
+
+
+
+CREATE TABLE [dbo].[Receipt_dtls] (
+    [rcpt_gid]            BIGINT          IDENTITY (1, 1) NOT NULL,
+    [rcpt_no]             VARCHAR (10)    NULL,
+    [rcpt_typ]            VARCHAR (1)     NULL,
+    [rcpt_ref_id]         VARCHAR (10)    NULL,
+    [rcpt_frm_typ]        VARCHAR (1)     NULL,
+    [rcpt_frm_acc]        VARCHAR (10)    NULL,
+    [rcpt_frm_name]       VARCHAR (20)    NULL,
+    [rcpt_to_typ]         VARCHAR (1)     NULL,
+    [rcpt_to_acc]         VARCHAR (10)    NULL,
+    [rcpt_to_name]        VARCHAR (20)    NULL,
+    [rcpt_actual_amt]     DECIMAL (18, 3) NULL,
+    [rcpt_balance_amt]    DECIMAL (18, 3) NULL,
+    [rcpt_paid_amt]       DECIMAL (18, 3) NULL,
+    [rcpt_rcvd_amt]       DECIMAL (18, 3) NULL,
+    [rcpt_credit_limit]   DECIMAL (18, 3) NULL,
+    [rcpt_credit_balance] DECIMAL (18, 3) NULL,
+    [rcpt_rmk]            VARCHAR (100)   NULL,
+    [rcpt_sts]            VARCHAR (1)     NULL,
+    [createby]            VARCHAR (10)    NULL,
+    [createon]            DATETIME        NULL,
+    [updateby]            VARCHAR (10)    NULL,
+    [updateon]            DATETIME        NULL,
+    [comp_id]             VARCHAR (4)     NULL
+);
+
+
+
+
+
+
+CREATE TABLE [dbo].[sr_dtls] (
+    [sr_guid]      BIGINT          IDENTITY (1, 1) NOT NULL,
+    [sr_inv_id]    VARCHAR (15)    NOT NULL,
+    [sr_cust_id]   VARCHAR (10)    NULL,
+    [sr_cust_name] VARCHAR (100)   NULL,
+    [sr_tot_itm]   INT             NULL,
+    [sr_tot_amt]   DECIMAL (18, 3) NULL,
+    [sr_disc]      DECIMAL (18, 3) NULL,
+    [sr_date_time] DATETIME        NULL,
+    [sr_net_amt]   DECIMAL (18, 3) NULL,
+    [sr_paid_by1]  VARCHAR (50)    NULL,
+    [sr_rmk1]      VARCHAR (100)   NULL,
+    [sr_amt1]      DECIMAL (18, 3) NULL,
+    [sr_paid_by2]  VARCHAR (50)    NULL,
+    [sr_rmk2]      VARCHAR (100)   NULL,
+    [sr_amt2]      DECIMAL (18, 3) NULL,
+    [sr_remark]    VARCHAR (100)   NULL,
+    [sr_sts]       VARCHAR (1)     NULL,
+    [sr_crd_flg]   VARCHAR (1)     NULL,
+    [sr_flg]       VARCHAR (2)     NULL,
+    [sr_cr_amt]    DECIMAL (18, 3) NULL,
+    [createby]     VARCHAR (10)    NULL,
+    [createon]     DATETIME        NULL,
+    [updateby]     VARCHAR (10)    NULL,
+    [updateon]     DATETIME        NULL,
+    [comp_id]      VARCHAR (4)     NULL,
+    [sr_ret_id]    VARCHAR (10)    NULL,
+    [sr_tax_amt]   DECIMAL (18, 3) NULL,
+    [sr_oth_amt]   DECIMAL (18, 3) NULL
+);
+
+
+
+
+
+
+
+CREATE TABLE [dbo].[sr_item_dtls] (
+    [sr_itm_guid]   BIGINT          IDENTITY (1, 1) NOT NULL,
+    [sr_itm_inv]    VARCHAR (10)    NULL,
+    [sr_itm_flg]    VARCHAR (2)     NULL,
+    [sr_itm_id]     VARCHAR (10)    NULL,
+    [sr_itm_grp]    VARCHAR (10)    NULL,
+    [sr_itm_name]   VARCHAR (50)    NULL,
+    [sr_itm_price]  DECIMAL (18, 3) NULL,
+    [sr_itm_cost]   DECIMAL (18, 3) NULL,
+    [sr_itm_disc]   DECIMAL (18, 3) NULL,
+    [sr_itm_taxamt] DECIMAL (18, 3) NULL,
+    [sr_itm_amt]    DECIMAL (18, 3) NULL,
+    [sr_itm_qty]    DECIMAL (18, 3) NULL,
+    [sr_itm_custid] VARCHAR (10)    NULL,
+    [sr_itm_date]   DATETIME        NULL,
+    [createby]      VARCHAR (10)    NULL,
+    [createon]      DATETIME        NULL,
+    [updateby]      VARCHAR (10)    NULL,
+    [updateon]      DATETIME        NULL,
+    [comp_id]       VARCHAR (4)     NULL,
+    [sr_itm_taxpct] DECIMAL (18, 2) NULL
+);
+
+
+
+
+
+CREATE TABLE [dbo].[stock_adj_dtls] (
+    [stk_gid]       BIGINT          IDENTITY (1, 1) NOT NULL,
+    [stk_itm_id]    VARCHAR (10)    NULL,
+    [stk_itm_grp]   VARCHAR (10)    NULL,
+    [stk_itm_price] DECIMAL (18, 3) NULL,
+    [stk_itm_qty]   DECIMAL (18, 3) NULL,
+    [stk_itm_unit]  VARCHAR (10)    NULL,
+    [stk_rmk]       VARCHAR (100)   NULL,
+    [stk_sts]       VARCHAR (1)     NULL,
+    [createby]      VARCHAR (10)    NULL,
+    [createon]      DATETIME        NULL,
+    [updateby]      VARCHAR (10)    NULL,
+    [updateon]      DATETIME        NULL,
+    [comp_id]       VARCHAR (4)     NULL
+);
+
+
+
+
+CREATE VIEW V_Item_Stock_Summ as
+select  ITEMCD , sum(INQTY - OUTQTY) QTY  from  V_Item_Stock_Details
+group by ITEMCD
+
+
+
+CREATE VIEW V_Item_Stock_Details as
+select pr_itm_id ITEMCD , pr_itm_date IDTE , pr_itm_inv REFID , pr_itm_qty QTY,  CASE WHEN pr_itm_qty > 0 THEN pr_itm_qty ELSE 0 END AS  INQTY ,
+ CASE WHEN pr_itm_qty < 1 THEN (Pr_itm_qty * -1) ELSE 0 END AS  OUTQTY , CASE WHEN pr_itm_qty > 0 THEN 'P' ELSE 'PR' END AS   TYP from  pr_item_dtls
+--group by 1 ,2
+union all
+select sr_itm_id ITEMCD , sr_itm_date IDTE ,  sr_itm_inv REFID , (sr_itm_qty * -1) QTY, CASE WHEN (sr_itm_qty * -1) > 0 THEN (sr_itm_qty * -1) ELSE 0 END AS  INQTY ,
+ CASE WHEN (sr_itm_qty * -1) < 1 THEN (sr_itm_qty) ELSE 0 END AS  OUTQTY , CASE WHEN sr_itm_qty > 0 THEN 'S' ELSE 'SR' END AS   TYP from  sr_item_dtls
+--group by 1 ,2
+union all
+select stk_itm_id ITEMCD , createon IDTE ,stk_rmk REFID , stk_itm_qty QTY, CASE WHEN stk_itm_qty > 0 THEN stk_itm_qty ELSE 0 END AS  INQTY ,
+ CASE WHEN stk_itm_qty < 1 THEN (stk_itm_qty * -1) ELSE 0 END AS  OUTQTY ,  'SA' TYP  from  stock_adj_dtls
+--group by 1 ,2
+--select pr_itm_inv ITEMCD , pr_itm_date IDTE , sum(pr_itm_qty) QTY  from  pr_item_dtls
+--group by 1 ,2
+--union all
+--select sr_itm_inv ITEMCD , sr_itm_date IDTE , sum(sr_itm_qty * -1) QTY  from  sr_item_dtls
+--group by 1 ,2
+--union all
+--select stk_itm_id ITEMCD , createon IDTE , sum(stk_itm_qty) QTY  from  stock_adj_dtls
+--group by 1 ,2

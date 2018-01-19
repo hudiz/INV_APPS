@@ -1,0 +1,433 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body
+{
+    background: white;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+}
+.container
+{
+    width: 100%;
+}
+
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+    width: 100%;
+    background-color: #fff;
+}
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: #000;
+    width: 100%;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #FFCD1A;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.main
+{
+    padding: 0px 12px;
+    margin: 12px 8px 8px 8px;
+    min-height: 420px;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    background-color: #FFCD1A;
+    width: 100%;
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    min-width: 100%;
+    z-index:1;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #000;
+    border: 1px solid #ffcd1a;
+    color: #ffcd1a;
+    display: block;
+    line-height: 1.7em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.page_header
+{
+    padding-bottom: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: underline;
+}
+.page_header h1
+{
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+}
+div.menu ul li a:hover
+{
+    background-color: #bfcbd6;
+    color: #465c71;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+.divfieldset
+{
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+.divfieldset table
+{
+    width: 100%;
+}
+.divfieldset label
+{
+    display: block;
+}
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline
+{
+    display: inline;
+}
+
+legend
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry
+{
+    width: 320px;
+    border: 1px solid #ccc;
+    height: 20px;
+    border-radius: 3px;
+}
+
+input.passwordEntry
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 80%;
+    padding-bottom:5px;
+}
+.buttonEntry
+{
+    height: 30px;
+    width: 100px;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: #FFCD1A;
+}
+
+.loginDisplay a:link
+{
+    color: white;
+}
+
+.loginDisplay a:visited
+{
+    color: white;
+}
+
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 20px;
+    margin-top: 10px;
+}
+/* --------------------------------MENU--------------------------------------  */
+div.menu1
+        {
+            width: 400px;
+            height: 500px;
+            position:absolute;
+            z-index:1000;
+            display:none;
+            background:#fff;
+            box-shadow: 0px 5px 12px 0px;
+        }
+        
+        ul.ul_menu
+        {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            width: auto;
+        }
+        
+        ul.ul_menu li a, ul.ul_menu li a:visited
+        {
+            background-color: #000;
+            border-bottom: 1px #4e667d solid;
+            color: #FFCD1A;
+            display: block;
+            line-height: 1.35em;
+            padding: 10px 20px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        ul.ul_menu li a:hover
+        {
+            background-color: #bfcbd6;
+            color: #465c71;
+            text-decoration: none;
+        }
+        
+        ul.ul_menu li a:active
+        {
+            background-color: #465c71;
+            color: #cfdbe6;
+            text-decoration: none;
+        }
+        ul.sub_menu
+        {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            width: auto;
+        }
+        ul.sub_menu li a, ul.sub_menu ul li a:visited
+        {
+            color: Black;
+            display: block;
+            line-height: 1.35em;
+            padding: 10px 20px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        ul.sub_menu li a:hover
+        {
+            background-color: #bfcbd6;
+            color: #465c71;
+            text-decoration: none;
+        }
+        
+        ul.sub_menu li a:active
+        {
+            background-color: #465c71;
+            color: #cfdbe6;
+            text-decoration: none;
+        }
+        .navig_left
+        {
+            float: left;
+            width: 150px;
+            height: 500px;
+            background-color: #000;
+            color: White;
+        }
+        .navig_right
+        {
+            float: left;
+            width: 245px;
+            height: 500px;
+        }
+        .nav_maintance
+        {
+            display: none;
+            background-color: white;
+        }
+         .menu_hd
+        {
+            height:35px;
+            width:70px;
+            background-color: #000;
+            border: 1px #000 solid;
+            color: #FFCD1A;
+            display: block;
+            text-decoration: none;
+            white-space: nowrap;
+            text-align:center;
+        }

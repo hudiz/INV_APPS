@@ -1,0 +1,48 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeFile="Site_login.Master.vb" Inherits="Site_login" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>INV_APP</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="container">
+        <div class="row">
+            <div class="page">
+                <div class="header">
+                    <div class="title">
+                        <h1>
+                            <asp:Label ID="comp_title" runat="server" Text="INVENTORY WEB APPLICATION" />                             
+                        </h1>
+                    </div>
+                    <div class="loginDisplay">
+                       
+                    </div>
+                    <div class="clear hideSkiplink">
+                      
+                    </div>
+                  
+                </div>
+                <div class="main">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="footer">
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

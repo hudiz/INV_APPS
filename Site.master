@@ -1,0 +1,123 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeFile="Site.Master.vb" Inherits="Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>INV_APP</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--%>
+    <script src="../Scripts/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#li_maintaince,.nav_maintance").hover(function () {
+                $(".nav_maintance").css("display", "block");
+            }, function () {
+                $(".nav_maintance").css("display", "none");
+            });
+            $("#menu_hd,.menu1").hover(function () {
+                $(".menu1").css("display", "block");
+            }, function () {
+                $(".menu1").css("display", "none");
+            });
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+        <div class="container">
+            <div class="row">
+                <div class="page">
+                    <div class="header">
+                        <div class="title">
+                            <h1>
+                                <asp:Label ID="comp_title" runat="server" />
+                            </h1>
+                        </div>
+                        <div class="loginDisplay">
+                            <span class="bold">
+                                <asp:Label ID="HeadLoginName" runat="server" />
+                                [ <a href="../Account/Login.aspx" id="HeadLoginStatus" runat="server">Log Out</a>
+                                ]
+                            </span>
+                        </div>
+                        <div class="clear hideSkiplink">
+                            <%--<div id="menu_hd" class="menu_hd">
+                            <img src="../images/mnu_icn.png" height="30px" width="30px" alt="" />
+                        </div>--%>
+                            <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+                                IncludeStyleBlock="false" Orientation="Horizontal">
+                                <Items>
+                                    <asp:MenuItem NavigateUrl="~/Reports/Home.aspx" Text="HOME"></asp:MenuItem>
+                                    <asp:MenuItem   Selectable="false" Text="TRANSACTION">
+                                        <asp:MenuItem NavigateUrl="~/Transaction/Sales_Details.aspx" Text="SALES"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Transaction/Purchase_Details.aspx" Text="PURCHASE"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Transaction/Receipts_trx.aspx" Text="RECIEPTS"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Transaction/Stock_Adjust.aspx" Text="STOCK ADJUSTMENTS"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem  Selectable="false"  Text="REPORTS">
+                                        <asp:MenuItem NavigateUrl="~/Reports/Sales_Rep.aspx" Text="SALES REGISTER"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Reports/Purchase_Rep.aspx" Text="PURCHASES REGISTER"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Reports/Stock_Rep.aspx" Text="STOCKS ITEM LIST"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Transaction/Receipts_trx.aspx" Text="RECIEPTS REGISTER"></asp:MenuItem> 
+                                    </asp:MenuItem>
+                                    <asp:MenuItem  Selectable="false" Text="ITEM">
+                                        <asp:MenuItem NavigateUrl="~/Maintainance/Item_grp_details.aspx" Text="ITEM GROUP"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Maintainance/Item_details.aspx" Text="ITEM"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Maintainance/Item_Price_Upload.aspx" Text="UPLOAD ITEM"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Maintainance/Item_Price.aspx" Text="ITEM PRICE LIST"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem  Selectable="false" Text="ADMIN">
+                                        <asp:MenuItem NavigateUrl="~/Maintainance/Customer_details.aspx" Text="CUSTOMER"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Maintainance/Supplier_details.aspx" Text="SUPPLIER"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Maintainance/Account_details.aspx" Text="ACCOUNT"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Maintainance/Expense_details.aspx" Text="EXPENSE"></asp:MenuItem>
+                                        <%--<asp:MenuItem NavigateUrl="~/Maintainance/Company_details.aspx" Text="COMPANY"></asp:MenuItem>--%>
+                                    </asp:MenuItem>
+                                </Items>
+                            </asp:Menu>
+                        </div>
+                        <%--<div class="menu1">
+                        <div class="navig_left">
+                            <ul class="ul_menu">
+                                <li><a>HOME</a></li>
+                                <li id="li_maintaince"><a>MAINTAINANCE</a></li>
+                                <li><a>TRANSACTION</a></li>
+                                <li><a>REPORTS</a></li>
+                            </ul>
+                        </div>
+                        <div class="navig_right">
+                            <div class="nav_maintance">
+                                <ul class="sub_menu">
+                                    <li><a href="../Maintaince/Customer_details.aspx">CUSTOMER</a></li>
+                                    <li><a href="../Maintaince/Supplier_details.aspx">SUPPLIER</a></li>
+                                    <li><a href="../Maintaince/Account_details.aspx">ACCOUNT</a></li>
+                                    <li><a href="../Maintaince/Expense_Details.aspx">EXPENSE</a></li>
+                                    <li><a href="../Maintaince/Item_Details.aspx">ITEM</a></li>
+                                    <li><a href="../Maintaince/Item_grp_Details.aspx">ITEM GROUP</a></li>
+                                    <li><a href="../Maintaince/Company_details.aspx">COMPANY</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>--%>
+                    </div>
+                    <div class="main">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="footer">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
